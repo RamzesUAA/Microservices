@@ -1,0 +1,204 @@
+{
+	"info": {
+		"_postman_id": "8159d68f-dab4-4213-a61f-ac3f420a5b0f",
+		"name": "Microservices",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14206076"
+	},
+	"item": [
+		{
+			"name": "PlatformService",
+			"item": [
+				{
+					"name": "GetPlatforms",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/platforms",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"platforms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetPlatformById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/platforms/4",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"platforms",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreatePlatform",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Postman\",\r\n    \"publisher\": \"Postman\",\r\n    \"cost\": \"free\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/platforms",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"platforms"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CommandService",
+			"item": [
+				{
+					"name": "TestInboundConnection",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"PostgreSQL\",\r\n    \"publisher\": \"Oracle\",\r\n    \"cost\": \"free\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{command_service_url}}/api/c/platforms",
+							"host": [
+								"{{command_service_url}}"
+							],
+							"path": [
+								"api",
+								"c",
+								"platforms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetPlatforms",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{command_service_url}}/api/c/platforms",
+							"host": [
+								"{{command_service_url}}"
+							],
+							"path": [
+								"api",
+								"c",
+								"platforms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetCommandsForPlatform",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{command_service_url}}/api/c/platforms/6/commands",
+							"host": [
+								"{{command_service_url}}"
+							],
+							"path": [
+								"api",
+								"c",
+								"platforms",
+								"6",
+								"commands"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetCommandForPlatform",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{command_service_url}}/api/c/platforms/4/commands/2",
+							"host": [
+								"{{command_service_url}}"
+							],
+							"path": [
+								"api",
+								"c",
+								"platforms",
+								"4",
+								"commands",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateCommandForPlatform",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"HowTo\": \"Push a docker container to hub a .Net Project\",\r\n    \"CommandLine\": \"dotnet build\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{command_service_urll}}/api/c/platforms/4/commands",
+							"host": [
+								"{{command_service_urll}}"
+							],
+							"path": [
+								"api",
+								"c",
+								"platforms",
+								"4",
+								"commands"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
